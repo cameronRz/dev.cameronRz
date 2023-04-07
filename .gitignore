@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 src/support/portfolio-data.js
-src/docs/
+src/assets/docs/cameron-resume.pdf
