@@ -1,19 +1,16 @@
-import { header } from '../support/portfolio-data';
+import { headerSectionContent } from '../support/portfolio-data';
 import Navbar from './Navbar';
 import '../assets/scss/header.scss';
+import Icon from './Icon';
 
 const Header = () => {
-  const { homepage, title } = header;
-
   return (
     <header className="header center">
       <h3>
-        {homepage ? (
-          <a href={homepage} className="link">
-            {title}
+        {headerSectionContent.homepage && (
+          <a href={headerSectionContent.homepage} className="link link--icon header__logo">
+            <Icon name="github" />
           </a>
-        ) : (
-          title
         )}
       </h3>
       <Navbar />

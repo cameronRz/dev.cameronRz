@@ -1,3 +1,7 @@
+:root {
+  --corner-radius: 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +11,24 @@
 .light {
   --color-bg: #fcfcfc;
   --color-bg-alt: #fff;
-  --color-fg: #555;
-  --color-fg-alt: #444;
+  --color-fg: #000;
+  --color-fg-alt: #555;
   --color-primary: #2978b5;
   --shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 .dark {
-  --color-bg: #23283e;
-  --color-bg-alt: #2a2f4c;
-  --color-fg: #bdbddd;
-  --color-fg-alt: #cdcdff;
+  --color-bg: #1c1e2a;
+  --color-bg-alt: #242635;
+  --color-fg: #fcfcfc;
+  --color-fg-alt: #bdbddd;
   --color-primary: #90a0d9;
-  --shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0,
+  --shadow: rgba(0, 0, 0, 0.16) 0 10px 20px 0,
   rgba(0, 0, 0, 0.06) 0 0 0 1px;
 }
 
 .app {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'SF Pro', 'Poppins', sans-serif;
   line-height: 1.5;
   color: var(--color-fg);
   background-color: var(--color-bg);
@@ -34,6 +38,15 @@ main {
   max-width: 1100px;
   width: 95%;
   margin: 0 auto;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 .center {
@@ -70,7 +83,7 @@ main {
     content: '';
     display: inline;
     width: 0;
-    height: 0.2em;
+    height: 0.1em;
     position: absolute;
     bottom: 0;
     background-color: var(--color-primary);
@@ -84,8 +97,6 @@ main {
 
   &--nav {
     color: var(--color-fg);
-    text-transform: lowercase;
-    font-weight: 500;
   }
 
   &--icon {
@@ -100,8 +111,11 @@ main {
   padding: 0.8em 1.4em;
   font-weight: 500;
   font-size: 0.9rem;
-  text-transform: lowercase;
   transition: transform 0.2s ease-in-out;
+  border: none;
+  border-radius: var(--corner-radius);
+  background-color: unset;
+  color: var(--color-fg);
 
   &--outline {
     color: var(--color-primary);

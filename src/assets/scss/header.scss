@@ -8,6 +8,10 @@
   @media (max-width: 600px) {
     height: 6em;
   }
+
+  &__logo:before {
+    display: none;
+  }
 }
 
 

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { projects, skills, contact } from '../support/portfolio-data';
 import { useTheme } from '../hooks/useTheme';
+import { projectsArray, skillsSectionContent, contactSectionContent } from '../support/portfolio-data';
 import { DARK_THEME } from '../support/constants';
+import Icon from './Icon.jsx';
 import '../assets/scss/navbar.scss';
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
         style={{ display: navbarVisible ? 'flex' : null }}
         className="nav__list"
       >
-        {projects.length ? (
+        {projectsArray.length ? (
           <li className="nav__list-item">
             <a
               href="#projects"
@@ -28,7 +29,7 @@ const Navbar = () => {
           </li>
         ) : null}
 
-        {skills.length ? (
+        {skillsSectionContent.length ? (
           <li className="nav__list-item">
             <a
               href="#skills"
@@ -40,7 +41,7 @@ const Navbar = () => {
           </li>
         ) : null}
 
-        {contact.email ? (
+        {contactSectionContent.email ? (
           <li className="nav__list-item">
             <a
               href="#contact"
@@ -54,21 +55,19 @@ const Navbar = () => {
       </ul>
 
       <button
-        type="button"
         onClick={toggleTheme}
         className="btn btn--icon nav__theme"
         aria-label="toggle theme"
       >
-        {theme === DARK_THEME ? 'SUN ICON' : 'MOON ICON'}
+        {theme === DARK_THEME ? <Icon name="sun" /> : <Icon name="moon" />}
       </button>
 
       <button
-        type="button"
         onClick={toggleNavbarVisibility}
         className="btn btn--icon nav__hamburger"
         aria-label="toggle navigation"
       >
-        {navbarVisible ? 'CLOSE ICON' : 'MENU ICON'}
+        {navbarVisible ? <Icon name="close" /> : <Icon name="menu" />}
       </button>
     </nav>
   );
