@@ -7,23 +7,45 @@
     margin-top: 2em;
   }
 
+  &__image {
+    height: 8.3em;
+    width: 8.3em;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 3em auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+
   &__name {
     color: var(--color-primary);
   }
 
   &__role {
     margin-top: 0.7em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  &__desc {
-    font-size: 1rem;
-    max-width: 600px;
+  &__bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 720px;
     text-align: center;
+
+    @media (max-width: 600px) {
+      text-align: justify;
+    }
   }
 
-  &__desc,
   &__contact {
     margin-top: 2.4em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .link--icon {

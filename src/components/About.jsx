@@ -1,28 +1,33 @@
 import { aboutSectionContent } from '../support/portfolio-data';
 import profileImage from '../assets/images/me.jpg';
+import resume from '../assets/docs/cameron-resume.pdf';
+import Icon from './Icon';
 import '../assets/scss/about.scss';
 
 const About = () => {
-  const { name, role, description, resume } = aboutSectionContent;
+  const { name, role, description } = aboutSectionContent;
 
   return (
     <div className="about center">
-      <img src={profileImage} alt="Me" height="150" width="150" style={{borderRadius: '50%', overflow: 'hidden', margin: '3em', boxShadow: 'rgba(100, 100, 111, 0.2) 0 7px 29px 0'}} />
+      <img src={profileImage} alt="Me" className="about__image" />
 
       {name && (
         <h1>
           Hi, I'm <span className="about__name">{name}</span>
         </h1>
       )}
-
       {role && <h2 className="about__role">{role}</h2>}
-      <p className="about__desc">{description && description}</p>
+
+      <section className="section">
+        <h2 className="section__title">About Me</h2>
+        <p className="about__bio">{description && description}</p>
+      </section>
 
       <div className="about__contact center">
         {resume && (
-          <a href={resume}>
+          <a href={resume} download>
             <span className="btn btn--outline">
-              Resume
+              Resume <Icon name="download" size="lg" />
             </span>
           </a>
         )}

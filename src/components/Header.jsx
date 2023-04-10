@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header center">
       <h3>
         {headerSectionContent.homepage && (
-          <a href={headerSectionContent.homepage} className="link link--icon header__logo">
+          <a href={headerSectionContent.homepage} className="link link--icon header__logo" target="_blank">
             <Icon name="github" />
           </a>
         )}

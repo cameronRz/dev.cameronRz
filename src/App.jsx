@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ProjectPreview from './components/ProjectPreview';
 
 function App() {
   const { theme } = useTheme();
@@ -20,6 +21,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ProjectPreview />
     </div>
   );
 }

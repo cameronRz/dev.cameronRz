@@ -27,11 +27,16 @@
   rgba(0, 0, 0, 0.06) 0 0 0 1px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   font-family: 'SF Pro', 'Poppins', sans-serif;
   line-height: 1.5;
   color: var(--color-fg);
   background-color: var(--color-bg);
+  position: relative;
 }
 
 main {
@@ -101,6 +106,10 @@ a {
 
   &--icon {
     color: var(--color-fg);
+
+    &:before {
+      display: none;
+    }
   }
 }
 

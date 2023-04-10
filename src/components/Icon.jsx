@@ -1,6 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUpRightFromSquare, faBars, faMoon, faSun, faXmark, faDownload } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowUpRightFromSquare,
+  faBars,
+  faMoon,
+  faSun,
+  faXmark,
+  faDownload
+} from '@fortawesome/free-solid-svg-icons';
 
 const Icon = ({ name, size }) => {
   const getFaIcon = () => {

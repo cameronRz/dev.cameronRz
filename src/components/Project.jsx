@@ -1,42 +1,54 @@
 import { v4 as uuid } from 'uuid';
 import '../assets/scss/project.scss';
 import Icon from './Icon';
+import { usePreviewControls } from '../hooks/usePreviewControls';
 
-const Project = ({ project }) => (
-  <div className="project">
-    <h3>{project.name}</h3>
+const Project = ({ project }) => {
+  const { showPreview } = usePreviewControls();
 
-    <p className="project__description">{project.description}</p>
-    {project.stack && (
-      <ul className="project__stack">
-        {project.stack.map((item) => (
-          <li key={uuid()} className="project__stack-item">
-            {item}
-          </li>
-        ))}
-      </ul>
-    )}
+  const showProjectPreview = () => {
+    showPreview(project);
+  };
 
-    {project.sourceCode && (
-      <a
-        href={project.sourceCode}
-        aria-label="source code"
-        className="link link--icon"
-      >
-        <Icon name="github" />
-      </a>
-    )}
+  return (
+    <div className="project" onClick={showProjectPreview}>
+      <h3>{project.name}</h3>
 
-    {project.livePreview && (
-      <a
-        href={project.livePreview}
-        aria-label="live preview"
-        className="link link--icon"
-      >
-        <Icon name="launch" />
-      </a>
-    )}
-  </div>
-);
+      <p className="project__description">{project.headline}</p>
+
+      {project.stack && (
+        <ul className="project__stack">
+          {project.stack.map((item) => (
+            <li key={uuid()} className="project__stack-item">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {project.sourceCode && (
+        <a
+          href={project.sourceCode}
+          aria-label="source code"
+          className="link link--icon"
+          target="_blank"
+        >
+          <Icon name="github" />
+        </a>
+      )}
+
+      {project.livePreview && (
+        <a
+          href={project.livePreview}
+          aria-label="live preview"
+          className="link link--icon"
+          target="_blank"
+        >
+          <Icon name="launch" size="lg" />
+        </a>
+      )}
+    </div>
+  );
+};
 
 export default Project;
