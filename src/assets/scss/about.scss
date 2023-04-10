@@ -23,6 +23,11 @@
 
   &__name {
     color: var(--color-primary);
+
+    @media (max-width: 470px) {
+      display: block;
+      font-size: 1.2em;
+    }
   }
 
   &__role {
